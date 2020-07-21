@@ -1,0 +1,9 @@
+<h1>All of the doggies</h1>
+<ul>
+  <div>
+  <% @dogs.sort_by{|dog| dog.employees.count}.reverse.each do |dog| %>
+    <li><h3><%= link_to dog.name, dog %></h3></li>
+    <h5><%= dog.name %> has <%= dog.employees.count %> <%= ("owner").pluralize(dog.employees.count) %></h5>
+  <% end  %>
+</div>
+</ul>
